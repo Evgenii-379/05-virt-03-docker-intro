@@ -1,4 +1,4 @@
-# **Домашнее задание к занятию 4 «Оркестрация группой Docker контейнеров на примере Docker Compose»**-***Вуколов Евгений
+# **Домашнее задание к занятию 4 «Оркестрация группой Docker контейнеров на примере Docker Compose»**-***Вуколов Евгений***
  
 ### **Инструкция к выполению**
  
@@ -139,9 +139,15 @@ services:
 ## **Задача 3**
 
 - ![scrinshot](https://github.com/Evgenii-379/05-virt-03-docker-intro/blob/main/Снимок%20экрана%202024-10-25%20002326.png)
+
+Если контейнер остановился после нажатия Ctrl-C , скорее всего это связано с тем, что основной процесс внутри контейнера получил сигнал прерывания и завершился. 
+
 - ![scrinshot](https://github.com/Evgenii-379/05-virt-03-docker-intro/blob/main/Снимок%20экрана%202024-10-25%20002623.png)
 - ![scrinshot](https://github.com/Evgenii-379/05-virt-03-docker-intro/blob/main/Снимок%20экрана%202024-10-25%20003539.png)
 - ![scrinshot](https://github.com/Evgenii-379/05-virt-03-docker-intro/blob/main/Снимок%20экрана%202024-10-25%20003937.png)
+
+После изменения порта 80 на 81, контейнер больше не прослушивает порт 80. Однако Docker по прежнему направляет запросы на 127.0.0.1:8080 на порт 80 внутри контейнера. Поскольку Nginx
+теперь прослушивает порт 81, запрос на порт 8080 с хостом не требует сервера внутри контейнера.
 
 ## **Задача 4**
 
@@ -151,22 +157,20 @@ services:
 ## **Задача 5**
 
 - ![scrinshot](https://github.com/Evgenii-379/05-virt-03-docker-intro/blob/main/Снимок%20экрана%202024-10-24%20130245.png)
+
+При выполнении команды docker-compose up -d, будет запущен docker-compose.yaml, по умолчанию docker-compose ищет файл docker-compose.yaml. Для того чтобы запустить оба файла, нужно использовать
+директиву include, для включения ещё одного файла.
+
 - ![scrinshot](https://github.com/Evgenii-379/05-virt-03-docker-intro/blob/main/Снимок%20экрана%202024-10-25%20132933.png)
 - ![scrinshot](https://github.com/Evgenii-379/05-virt-03-docker-intro/blob/main/Снимок%20экрана%202024-10-25%20173307.png)
 - ![scrinshot](https://github.com/Evgenii-379/05-virt-03-docker-intro/blob/main/Снимок%20экрана%202024-10-25%20140341.png)
 - ![scrinshot](https://github.com/Evgenii-379/05-virt-03-docker-intro/blob/main/Снимок%20экрана%202024-10-25%20172812.png)
+
+Предупреждение говорит о том, что найдены контейнеры-сироты для этого проекта и если были удалены или переименованы службы в файле compose, то можно запустить эту команду с флагом
+ --remove-orhans, чтобы очистить её.
+
 - ![scrinshot](https://github.com/Evgenii-379/05-virt-03-docker-intro/blob/main/Снимок%20экрана%202024-10-25%20174933.png)
 
 
 
-
-
-
-
-
-
-
-
-- ![scrinshot](https://github.com/
-- ![scrinshot](https://github.com/
 
